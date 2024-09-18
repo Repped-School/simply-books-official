@@ -21,10 +21,10 @@ export default function NavBar() {
             <Link className="nav-link" href="/authors">
               Authors
             </Link>
-            <Button variant="danger" onClick={signOut}>
-              Sign Out
-            </Button>
           </Nav>
+          <Button variant="danger" onClick={signOut}>
+            Sign Out
+          </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
