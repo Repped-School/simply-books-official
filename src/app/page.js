@@ -1,29 +1,42 @@
-'use client';
+/* eslint-disable react-hooks/exhaustive-deps */
+"use client";
 
- // any component that uses useAuth needs this because if a component directly imports useAuth, it needs to be a client component since useAuth uses React hooks.
-
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-import { signOut } from '@/utils/auth'; // anything in the src dir, you can use the @ instead of relative paths
-import { useAuth } from '@/utils/context/authContext';
+import { getBooks } from '../api/bookData';
+import { useAuth } from '../utils/context/authContext';
+import BookCard from '../components/BookCard';
 
 function Home() {
+  // TODO: Set a state for books
+  const [books, setBooks] = useState([]);
+
+  // TODO: Get user ID using useAuth Hook
   const { user } = useAuth();
 
+  // TODO: create a function that makes the API call to get all the books
+  const getAllTheBooks = () => {
+    getBooks(user.uid).then(setBooks);
+  };
+
+  // TODO: make the call to the API to get all the books on component render
+  useEffect(() => {
+    getAllTheBooks();
+  }, []);
+
   return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        maxWidth: '400px',
-        margin: '0 auto',
-      }}
-    >
-      <h1>Hello {user.displayName}! </h1>
-      <p>Click the button below to logout!</p>
-      <Button variant="danger" type="button" size="lg" className="copy-btn" onClick={signOut}>
-        Sign Out
-      </Button>
+    <div className="text-center my-4">
+      <Link href="/book/new" passHref>
+        <Button>Add A Book</Button>
+      </Link>
+      <div className="d-flex flex-wrap">
+        {/* TODO: map over books here using BookCard component */}
+        {books.map((book) => (
+          <BookCard key={book.firebaseKey} bookObj={book} onUpdate={getAllTheBooks} />
+        ))}
+      </div>
+
     </div>
   );
 }
