@@ -1,62 +1,58 @@
-# Simply Books Template
+# Welcome to Simply Books!
 
-[See Live Demo of this Template](https://drt-next-js-template-app-router.netlify.app/)
+## Get Started
+- [Definition of Done](#definition-of-done)
+- [MVP Guidelines](#mvp-guidelines)
+- [Guide to getting started with this project](#guide-to-getting-started)
 
-## Topics
-<details>
-<summary>1. Review Project Checklist</summary>
+### Definition of Done
+A feature or task is considered "done" when:
+1. All tasks, features, and fixes must be ticketed and included on the GitHub project board.
+Make sure the project board uses columns like Backlog, In Progress, Testing, and Done to track work.
+1. The code is fully implemented and meets the requirements defined in the task.
+1. The feature passes all AC especially for CRUD functionality.
+1. The user can successfully perform Create, Read, Update, and Delete operations for both books and authors.
+1. All relationships between authors and books are correctly established and maintained.
+1. The feature is responsive and works across major browsers and mobile devices.
+1. The app is deployed on Netlify, and all features work in the deployed environment.
+1. The README is updated with any relevant instructions, and a Loom video (max 5 minutes) demonstrates the app's features.
+1. For any stretch goals, the feature must be functional and demonstrate proper user interaction (e.g., public/private book functionality, simulated purchase).
+1. Any issues or bugs identified during development or testing must be fixed by the developer. All work related to fixes must be ticketed and included on the GitHub project board.
+1. The project board must reflect all tasks, bugs, and updates, with each task being moved through the proper columns (Backlog, In Progress, Testing, Done).
 
-- [Day 1](/project-docs/CHECKLIST.md#day-1)
-- [Day 2](/project-docs/CHECKLIST.md#day-2)
-- [Day 3](/project-docs/CHECKLIST.md#day-3)
-- [Day 4](/project-docs/CHECKLIST.md#day-4)
-- [Day 5](/project-docs/CHECKLIST.md#day-5)
-- [Day 6](/project-docs/CHECKLIST.md#day-6)
-</details>
+### MVP Guidelines
+The Minimum Viable Product (MVP) for the Simply Books project includes:
+1. **CRUD Functionality for Books and Authors**:
+   - Users must be able to create, read, update, and delete books and authors.
+   - When viewing an author, all books associated with that author must be visible.
+   - When deleting an author, all of their books are also deleted.
+   
+2. **Author-Book Relationship**:
+   - Each book must be associated with an author.
+   - When a user views a book, the associated author's details must be accessible.
+   
+3. **Firebase Integration**:
+   - The app must use Firebase for authentication and real-time data management.
+   - Books and authors are tied to the logged-in user.
 
-2. [Starting the Project](#starting-the-project)
-3. [Deploying on Netlify](#deploying-on-netlify)
-___
+4. **User-Specific Data**:
+   - Each user should only see their own books and authors.
 
-## Starting the Project
-1. Clone your new repo to your local machine
-1. Create a Firebase project and set up authentication. Use [these videos](https://vimeo.com/showcase/codetracker-firebase) as a refresher if needed.
-1. Create a `.env` file at the root of the project
-1. Copy/Paste the contents of the `.env.sample` file to your newly created `.env` file.
-1. Copy over all of your Firebase values into the `.env` file.
-1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
-1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
-1. Next, run `npm run prepare`. This command sets up husky to track eslint errors on commit that will make your deploy fail on Netlify.
-1. Run `npx eslint . --ext .js,.jsx`
-1. To start your application, run `npm run dev`. THIS IS THE COMMAND YOU WILL USE TO RUN YOUR DEVELOPMENT SERVER FROM NOW ON.
-1. Open [http://localhost:3000](http://localhost:3000) with your browser.
+#### Stretch Goals:
+- **Public/Private Books**:
+   - Users can mark books as public or private.
+   - Public books are viewable by all users without needing to log in.
+   - Private books are only visible to the user who created them.
+   
+- **Simulated Book Purchases**:
+   - Users can add books to a cart and simulate purchasing them.
+   - No real transaction will occur, but the UI will allow users to add items to the cart and check out.
 
-### If you see this, you are set to go!
-<img width="450" alt="Screen Shot 2022-07-06 at 1 07 27 PM" src="https://github.com/user-attachments/assets/deae25f0-01d5-44b4-be60-7297b0f6f0ef">
+### Guide to Getting Started
+Follow the deployment guide to get your app live!
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. **Follow the Guide**:
+   - Detailed steps for each part of the project can be found in the [Guide to getting started with this project](/project-docs/GET_STARTED.md).
 
-**NOTES:** 
-- If you see the following error, you did not follow all the setup steps correctly and failed to add your Firebase creds. Go back and do that NOW.
-
-<img width="1043" alt="Screen Shot 2022-07-06 at 11 18 45 AM" src="https://user-images.githubusercontent.com/29741570/177612501-c2628f18-4bbd-4de9-aae6-27ffba1172d6.png">
-
-### Deploying on Netlify
-Netlify will automatically detect your project and prepopulate the settings, but should something go wrong and it does not, here are the commands:
-
-- Build Command: `npm run build`
-- Publish directory: `.next`
-
-#### Additional Steps to Take on Netlify
-- Add Environmental Variables
-    - Any Enviromental variables you are using in your `.env` file should be added to Netlify. 
-        - Go to Site settings > Build & deploy > Environment > Environment variables and the keys and values there if you did not add them when you were deploying your site
-
-- Update Firebase URL Settings
-    - In Firebase under Authentication select sign in methods, scroll to Authorized domains. Add your Netlify URL.
-        
-## Learn More about Next.js
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Submit**:
+   - Make sure to complete the README, Loom video demonstration, and submit your project with the deployed link.
