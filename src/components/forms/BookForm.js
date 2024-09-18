@@ -16,10 +16,11 @@ const initialState = {
   price: '',
   sale: false,
   title: '',
+  author_id: '',
 };
 
-function BookForm({ obj }) {
-  const [formInput, setFormInput] = useState(initialState);
+function BookForm({ obj = initialState }) {
+  const [formInput, setFormInput] = useState(obj);
   const [authors, setAuthors] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
@@ -54,7 +55,7 @@ function BookForm({ obj }) {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className="text-black">
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Book</h2>
 
       {/* TITLE INPUT  */}
@@ -74,14 +75,7 @@ function BookForm({ obj }) {
 
       {/* AUTHOR SELECT  */}
       <FloatingLabel controlId="floatingSelect" label="Author">
-        <Form.Select
-          aria-label="Author"
-          name="author_id"
-          onChange={handleChange}
-          className="mb-3"
-          value={obj.author_id} // FIXME: modify code to remove error
-          required
-        >
+        <Form.Select aria-label="Author" name="author_id" onChange={handleChange} className="mb-3" value={formInput.author_id || ''} required>
           <option value="">Select an Author</option>
           {authors.map((author) => (
             <option key={author.firebaseKey} value={author.firebaseKey}>
@@ -128,10 +122,6 @@ BookForm.propTypes = {
     author_id: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
-};
-
-BookForm.defaultProps = {
-  obj: initialState,
 };
 
 export default BookForm;
