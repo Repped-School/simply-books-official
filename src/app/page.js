@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-"use client";
+
+'use client';
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -36,7 +37,6 @@ function Home() {
           <BookCard key={book.firebaseKey} bookObj={book} onUpdate={getAllTheBooks} />
         ))}
       </div>
-
     </div>
   );
 }

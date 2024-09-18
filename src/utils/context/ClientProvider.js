@@ -2,7 +2,7 @@
 
 'use client';
 
- // This directive ensures that this component runs on the client side, allowing it to use React hooks like useState and useEffect.
+// This directive ensures that this component runs on the client side, allowing it to use React hooks like useState and useEffect.
 
 // Purpose of ClientProvider:
 // The ClientProvider component is used to encapsulate all client-side context providers and components that rely on client-side React hooks.
@@ -24,7 +24,9 @@ function ClientProvider({ children }) {
   return (
     <AuthProvider>
       {/* ViewDirectorBasedOnUserAuthStatus determines the view based on the user's authentication state */}
-      <ViewDirectorBasedOnUserAuthStatus>{children}</ViewDirectorBasedOnUserAuthStatus>
+      <ViewDirectorBasedOnUserAuthStatus>
+        <div className="container">{children}</div>
+      </ViewDirectorBasedOnUserAuthStatus>
     </AuthProvider>
   );
 }

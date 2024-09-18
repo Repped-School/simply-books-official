@@ -1,14 +1,16 @@
-/* eslint-disable @next/next/no-img-element */
+'use client';
+
 import React, { useEffect, useState } from 'react';
-import { viewBookDetails } from '../../api/mergedData';
+import { viewBookDetails } from '@/api/mergedData';
+import PropTypes from 'prop-types';
 
 export default function ViewBook({ params }) {
   const [bookDetails, setBookDetails] = useState({});
 
-  // TODO: grab firebaseKey from url
+  // grab firebaseKey from url
   const { firebaseKey } = params;
 
-  // TODO: make call to API layer to get the data
+  // make call to API layer to get the data
   useEffect(() => {
     viewBookDetails(firebaseKey).then(setBookDetails);
   }, [firebaseKey]);
@@ -26,12 +28,12 @@ export default function ViewBook({ params }) {
         Author Email: <a href={`mailto:${bookDetails.authorObject?.email}`}>{bookDetails.authorObject?.email}</a>
         <p>{bookDetails.description || ''}</p>
         <hr />
-        <p>
-          {bookDetails.sale
-            ? `🏷️ Sale $${bookDetails.price}`
-            : `$${bookDetails.price}`}
-        </p>
+        <p>{bookDetails.sale ? `🏷️ Sale $${bookDetails.price}` : `$${bookDetails.price}`}</p>
       </div>
     </div>
   );
 }
+
+ViewBook.propTypes = {
+  params: PropTypes.objectOf({}).isRequired,
+};
