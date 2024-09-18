@@ -1,5 +1,7 @@
 # Welcome to Simply Books!
 
+This project will be completed in a 1 week sprint of 6 days or less. If you need support, put in a ticket ASAP and a senior engineer or teammate will help you.
+
 ## Get Started
 - [Definition of Done](#definition-of-done)
 - [MVP Guidelines](#mvp-guidelines)
