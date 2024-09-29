@@ -31,7 +31,6 @@ Make sure the project board uses columns like Backlog, In Progress, Testing, and
 1. The feature passes all AC especially for CRUD functionality.
 1. The user can successfully perform Create, Read, Update, and Delete operations for both books and authors using postman.
 1. All relationships between authors and books are correctly established and maintained.
-1. The feature is responsive and works across major browsers and mobile devices.
 1. The API docs are deployed on Postman, and all features work in the deployed environment.
 1. The README is updated with any relevant instructions, and a Loom video (max 5 minutes) demonstrates the app's features.
 1. For any stretch goals, the feature must be functional and demonstrate proper user interaction (e.g., public/private book functionality, simulated purchase).
