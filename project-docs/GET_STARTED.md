@@ -7,6 +7,7 @@ ___
 
 ## PROJECT Core REQUIREMENTS
 [See the FULL EXPECTED MVP](https://github.com/Repped-School/simply-books-official?tab=readme-ov-file#mvp-guidelines)
+
 These are required functionality your app should have by the end of the week.
 
 _**All Books CRUD and functionality is done for you, so that is not a part of the assessment**_
