@@ -20,7 +20,7 @@ _**All Books CRUD and functionality is done for you, so that is not a part of th
 1. UPDATE README
 
 ## Project Resources
-- [ERD LINK](https://dbdiagram.io/d/Almost-Amazon-60315ba6fcdcb6230b20bbaa?utm_source=dbdiagram_embed&utm_medium=bottom_open]
+- [ERD LINK](https://dbdiagram.io/d/Almost-Amazon-60315ba6fcdcb6230b20bbaa?utm_source=dbdiagram_embed&utm_medium=bottom_open)
 
 ## Get Started
 In this project, we want to get acclimated with the project template. Below is a list of the items that you should complete prior to beginning the project:
