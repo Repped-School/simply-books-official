@@ -2,21 +2,103 @@
 
 [See Live Demo of this Template](https://drt-next-js-template-app-router.netlify.app/)
 
-## Topics
-<details>
-<summary>1. Review Project Checklist</summary>
-
-- [Day 1](/project-docs/CHECKLIST.md#day-1)
-- [Day 2](/project-docs/CHECKLIST.md#day-2)
-- [Day 3](/project-docs/CHECKLIST.md#day-3)
-- [Day 4](/project-docs/CHECKLIST.md#day-4)
-- [Day 5](/project-docs/CHECKLIST.md#day-5)
-- [Day 6](/project-docs/CHECKLIST.md#day-6)
-</details>
-
-2. [Starting the Project](#starting-the-project)
-3. [Deploying on Netlify](#deploying-on-netlify)
+1. [PROJECT REQUIREMENTS](#project-requirements)
+2. [GET STARTED](#get-started)
 ___
+
+## PROJECT REQUIREMENTS
+These are required functionality your app should have by the end of the week.
+
+_**All Books CRUD and functionality is done for you, so that is not a part of the assessment**_
+
+1. READ Authors - [VIDEO EXAMPLE](https://www.reppedflix.com/shows/intro-to-react?id=0ArXC9tcf44)
+1. CREATE Authors - [VIDEO EXAMPLE](https://www.reppedflix.com/shows/intro-to-react?id=REZ-oMxk4Fw)
+1. UPDATE Authors - [VIDEO EXAMPLE](https://www.reppedflix.com/shows/intro-to-react?id=uhtRy-YW34w)
+1. DELETE Authors - [VIDEO EXAMPLE](https://www.reppedflix.com/shows/intro-to-react?id=pLuJPl0xLok)
+1. VIEW Author DETAILS
+1. [Deploy on Netlify](#deploying-on-netlify)
+1. UPDATE README
+
+## Get Started
+In this project, we want to get acclimated with the project template. Below is a list of the items that you should complete prior to beginning the project:
+
+### 1. Google Authentication with Firebase
+- Complete [Starting the Project](#starting-the-project)
+
+### 2. Folder based routes ([Routing Docs](https://nextjs.org/docs/app/building-your-application/routing))
+
+Remember: 
+- In the `src/app` directory, create a new folder named the path specified.(e.g. contact)
+- In order for that route to not produce a 404, it must have a `page.js` file in it
+- You may have nested routes by creating directories/folders
+
+Create the following new folder based routes and add filler code **(IMPORTANT: make sure ALL of the functions names start with a capital letter)**
+   - `src/app/authors/page.js`
+   - `src/app/profile/page.js`
+   - `src/app/author/new/page.js`
+
+### 3. DYNAMIC routes ([Routing Docs](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes))
+
+Remember: 
+- DYNAMIC routes are determined by naming a folder with square brackets and then the name of the dynamic key - between: [dynamicKey]’
+- The folder name MUST have square brackets if the route is using a dynamic route
+- You can only have one dynamic folder per directory level
+- You can name the dynamic key ANYTHING. It is a taco.
+
+Create the following new folder based DYNAMIC routes **(IMPORTANT: make sure ALL of the functions names start with a capital letter)**
+- `src/app/author/[firebaseKey]/page.js`
+- `src/app/author/edit/[firebaseKey]/page.js`
+
+### 4. [Links & Navigation](https://nextjs.org/docs/api-reference/next/link)
+
+- Update the `NavBar.js` component to include the following links. Link the pages to the relevant pages you created in the routing activity
+   - Authors
+   - Create Author
+   - Profile
+
+### 5. [Extracting Dynamic Route Data](https://nextjs.org/docs/routing/dynamic-routes)
+- Now that you have some pages/routes set up, let's grab the data from the dynamic routes.
+- The actual value for *DYNAMIC_KEY* is whatever you named your file. In this instance it is **firebaseKey**, so make sure to update the code below inside of your component
+
+```js
+
+export default function PageName({ params }) {
+    // inside component use
+    const { DYNAMIC_KEY } = params;
+}
+
+```
+
+### 6. Working with components
+- **Create User component:** a component that accepts the user object and uses the image, name, email, and last login
+    - For any images be sure to use the `<img/>` tag instead of the `<Image/>` component from Next/Image.
+    - An eslint error: **Do not use <img>. Use Image from 'next/image' instead. See [https://nextjs.org/docs/messages/no-img-element.](https://nextjs.org/docs/messages/no-img-element)** Just disable this error for the entire file.
+    
+    - If you do use Next/Image component you will need to add your image domain in to the `config.next.js` file. 
+        - ```images: { domains: ['lh3.googleusercontent.com'], },```
+        - Next/Image also requires the `width` & `height` props.
+- **Create AuthorCard component:** a component that accepts the author data and displays it.
+- Setup PropTypes and use default props to give default values to the component so you can test it
+
+### 7. User specific data
+
+- Relevant files
+   - `utils/context/authContext.js`
+- useAuth custom hook
+   - Use the following code anywhere inside your components to get access to the user details
+
+```js
+const { user } = useAuth();
+```
+
+- In the `src/app/profile/page.js` file, use the **User component** you created to display the user information.
+- Add the Sign Out button below the user component
+- Use the code above inside of your component to get access to the useAuth hook **_(Make sure to import the dependency located in `utils/context/authContext.js`)_**
+
+### 8. Bring over the data
+
+Go to your old Almost Amazon project and bring copy/paste the author, books and merged data API calls you created into the relevant files. **DO NOT OVERWRITE ANY FUNCTIONS** that currently are in those files unless yours are different.
+
 
 ## Starting the Project
 1. Clone your new repo to your local machine
