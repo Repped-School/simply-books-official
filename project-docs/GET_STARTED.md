@@ -3,6 +3,7 @@
 [See Live Demo of this Template](https://drt-next-js-template-app-router.netlify.app/)
 
 1. [PROJECT REQUIREMENTS](#project-requirements)
+1. [PROJECT Resources](#project-resources)
 2. [GET STARTED](#get-started)
 ___
 
